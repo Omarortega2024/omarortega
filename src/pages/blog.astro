@@ -1,0 +1,18 @@
+---
+import Layoutblog from "../layouts/Layout.astro";
+const allPosts = await Astro.glob("../pages/posts/*.md");
+---
+
+<Layoutblog title="Noticias relacionadas con Omar Ortega">
+    {
+        allPosts.map((post) => (
+
+            <li>
+                <a href={post.url}>
+                    <img src={post.frontmatter.image.url} alt="">
+                    {post.frontmatter.title}
+                </a>
+            </li>
+        ))
+    }
+</Layoutblog>

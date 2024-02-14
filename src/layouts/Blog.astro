@@ -1,0 +1,30 @@
+---
+const {frontmatter} = Astro.props
+
+import Layoutblog from "../layouts/Layout-blog.astro";
+---
+<style>
+    .redcolor{
+        color: #e3342f;
+    }
+</style>
+
+<Layoutblog title={frontmatter.title}>
+    <section>
+        <div class="max-w-screen-xl mx-auto my-10">
+            <div class="flex justify-center space-x-4 font-regular my-4">
+            <p class="redcolor">{frontmatter.category}</p>
+            <p class="redcolor">{frontmatter.Date}</p>
+            </div>
+            <h1 class="text-center text-4xl  lg:text-6xl font-semibold lg:mx-10">{frontmatter.title}</h1>
+            <img class="mx-auto md:w-8/12 my-6" src={frontmatter.image.url} alt="">
+        </div>
+    </section>
+    <section>
+        <div class="max-w-screen-md mx-auto my-10">
+            <div class="mx-4 space-y-10">
+                <slot/>
+            </div>
+        </div>
+    </section>
+</Layoutblog>

@@ -1,0 +1,30 @@
+---
+import Layout from "../layouts/Layout.astro";
+import imgOne from "../images/trayectoria/img-1.jpeg";
+import imgTwo from "../images/trayectoria/img-2.jpeg";
+import imgThree from "../images/trayectoria/img-3.jpeg";
+---
+
+<Layout title="Trayectoria de omar ortega">
+     <section>
+          <div class="lg:flex lg:p-32 lg:relative md:pt-24">
+               <div class="basis-1/2">
+                    <img src={imgOne.src} alt="Foto de omar ortega">
+                    <img src={imgTwo.src} alt="Foto de omar ortega">
+                    <img src={imgThree.src} alt="Foto de omar ortega">
+               </div>
+               <div class="basis-1/2 sticky top-32 h-full py-10">
+                    <ul class="list-disc lg:pl-10 px-8 pt-5">
+                         <li>Delegado en los Estados de Tlaxcala, Oaxaca, Tabasco y Guerrero 2000 – 2009.</li>
+                         <li>Candidato a Presidente Municipal de Coacalco de Berriozabal 2006-2009.</li>
+                         <li>Integrante de la Comisión de Garantías y Vigilancia del PRD 2009.</li>
+                         <li>Secretario Estatal de Formación Política del PRD 2009 – 2011.</li>
+                         <li>Representante del Consejo Local del IFE 2011- 2012.</li>
+                         <li>Secretario de Organización del Comité Ejecutivo Nacional del PRD 2012 – 2014.</li>
+                         <li>Presidente del Comité Ejecutivo Estatal del PRD, Estado de México 2014 – 2019.</li>
+                         <li>Dirigente Nacional de Vanguardia Progresista del PRD.</li>
+                    </ul>
+               </div>
+          </div>
+     </section>
+</Layout>

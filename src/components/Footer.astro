@@ -1,0 +1,45 @@
+---
+import facebookW from '../images/social/white/facebook.svg';
+import instagramW from '../images/social/white/instagram.svg';
+import tiktokW from '../images/social/white/tiktok.svg';
+import xW from '../images/social/white/x.svg';
+---
+<style>
+    .icon:hover {
+    filter: brightness(0) saturate(100%) invert(77%) sepia(99%) saturate(3220%) hue-rotate(344deg) brightness(99%) contrast(98%);
+}
+</style>
+
+<footer class="bg-black text-white">
+        <div class="max-w-screen-xl flex flex-col md:flex mx-auto md:justify-between px-2 py-20">
+            <div>
+                <p class="pb-2 md:pb-4 pl-2">Teléfono: 722 279 6400 Ext. 6462</p>
+                <div class="flex sm:space-x-2 flex-wrap">
+                <p class="pl-2">Correo electrónico:</p>
+                <a href="">
+                    <p class="pl-2">omar.ortega@gpprdedomex.com</p>
+                </a>
+                </div>
+                
+            </div>
+            <div class="mt-44 mg:mt-auto flex flex-col sm:flex-row  md:justify-between">
+        
+                <p class="px-2 py-2 text-slate-300">2024 Omar Ortega Álvarez</p>
+                <div class="flex space-x-6 my-auto md:justify-end pl-2 py-2">
+                    <a href=>
+                        <img class="w-3 icon" src={facebookW.src} alt="Logotipo de facebook">
+                    </a>
+                    <a href=>
+                        <img class="w-4 icon" src={instagramW.src} alt="Logotipo de instagram">
+                    </a>
+                    <a href=>
+                        <img class="w-4 icon" src={tiktokW.src} alt="Logotipo de tiktok">
+                    </a>
+                    <a href="">
+                        <img class="w-4 icon" src={xW.src} alt="Logotipo de x">
+                    </a>
+                </div>
+            
+            </div>
+        </div>
+</footer>
