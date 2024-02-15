@@ -320,24 +320,28 @@ const limitedPosts = allPosts.slice(0, maxPosts);
              </div>
             
               <script>
-                 window.addEventListener("DOMContentLoaded",function(){
+              window.addEventListener("DOMContentLoaded", function () {
 
                 // Manejar clic en la imagen para pantalla completa
                 document.querySelectorAll('.group').forEach(item => {
-                item.addEventListener('click', function() {
-                    const imageUrl = (this.querySelector('img') as HTMLImageElement).src;
-                    const fullScreen = document.getElementById('fullscreen-image')as HTMLImageElement | null;;
-                    fullScreen.src = imageUrl;
-                    document.getElementById('fullscreen').classList.toggle('hidden');
-                });
+                    item.addEventListener('click', function () {
+                        const imageElement = this.querySelector('img');
+                        const fullScreen = document.getElementById('fullscreen-image') as HTMLImageElement;
+
+                        if (imageElement instanceof HTMLImageElement && fullScreen) {
+                            const imageUrl = imageElement.src;
+                            fullScreen.src = imageUrl;
+                            document.getElementById('fullscreen')?.classList.toggle('hidden');
+                        }
+                    });
                 });
 
                 // Cerrar pantalla completa al hacer clic fuera de la imagen
-                document.getElementById('fullscreen').addEventListener('click', function() {
-                this.classList.add('hidden');
+                document.getElementById('fullscreen')?.addEventListener('click', function () {
+                    this.classList.add('hidden');
                 });
-                console.log("Las imagenes si se componen")
 
+                console.log("Las imágenes sí se componen");
                 });
               </script>
         </section>
