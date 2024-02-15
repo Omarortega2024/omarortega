@@ -326,7 +326,8 @@ const limitedPosts = allPosts.slice(0, maxPosts);
                 document.querySelectorAll('.group').forEach(item => {
                 item.addEventListener('click', function() {
                     const imageUrl = (this.querySelector('img') as HTMLImageElement).src;
-                    document.getElementById('fullscreen-image').src = imageUrl;
+                    const fullScreen = document.getElementById('fullscreen-image')as HTMLImageElement | null;;
+                    fullScreen.src = imageUrl;
                     document.getElementById('fullscreen').classList.toggle('hidden');
                 });
                 });
