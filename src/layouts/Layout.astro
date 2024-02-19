@@ -5,9 +5,11 @@ import '../styles/global.css';
 
 interface Props {
 	title: string;
+	blogVariant?: boolean;
 }
 
 const { title } = Astro.props;
+
 ---
 
 
@@ -21,7 +23,7 @@ const { title } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body class="relative">
-		<Nav/>
+		<Nav blogVariant={Astro.props.blogVariant}/>
 		<slot/>
 		<Footer/>
 	</body>

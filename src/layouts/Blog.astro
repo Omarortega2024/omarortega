@@ -1,7 +1,7 @@
 ---
 const {frontmatter} = Astro.props
 
-import Layoutblog from "../layouts/Layout-blog.astro";
+import Layoutblog from "../layouts/Layout.astro";
 ---
 <style>
     .redcolor{
@@ -9,7 +9,7 @@ import Layoutblog from "../layouts/Layout-blog.astro";
     }
 </style>
 
-<Layoutblog title={frontmatter.title}>
+<Layoutblog title={frontmatter.title} blogVariant={true}>
     <section>
         <div class="max-w-screen-xl mx-auto my-10">
             <div class="flex justify-center space-x-4 font-regular my-4">
