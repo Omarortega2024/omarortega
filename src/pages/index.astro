@@ -209,7 +209,7 @@ const limitedPosts = allPosts.slice(0, maxPosts);
                                                     const button = document.querySelector("#mailto") as HTMLAnchorElement;
                                                     form.addEventListener('submit', handleSubmit);
 
-                                                    function handleSubmit(event) {
+                                                    function handleSubmit(event: Event) {
                                                         event.preventDefault();
                                                         const formData = new FormData(this);
                                                         console.log(formData.get('nombre'));
