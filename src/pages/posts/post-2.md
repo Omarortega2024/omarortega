@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/Blog.astro
 title: 'El PRD mantendrá alianza con ciudadanía y apertura con el PRI: Omar Ortega'
+description: 'El PRD en el Congreso Local recalcó que mantendrá la alianza con la ciudadanía y para el caso de los bloques legislativos tendrá apertura tanto con el PRI o con Morena...'
 category: BLOG 
 Date: 'AGOSTO 29, 2023'
 image: 

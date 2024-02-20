@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/Blog.astro
 title: 'Interrupción legal del embarazo, tema pendiente en Edoméx: Omar Ortega'
+description: 'El coordinador parlamentario del PRD en la Legislatura mexiquense, Omar Ortega, advirtió que aquellos temas que compartan en el Congreso Local con Morena pasarán...'
 category: BLOG 
 Date: 'AGOSTO 29, 2023'
 image: 

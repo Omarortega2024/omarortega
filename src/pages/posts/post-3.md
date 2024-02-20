@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/Blog.astro
 title: 'El PRD mexiquense no está muerto: Omar Ortega'
+description: 'El coordinador parlamentario del Partido de la Revolución Democrática en el Congreso mexiquense, Omar Ortega Álvarez, aseguró que el sol azteca “no está muerto” y podrá dar la batalla en el 2024...'
 category: BLOG 
 Date: 'AGOSTO 29, 2023'
 image: 
