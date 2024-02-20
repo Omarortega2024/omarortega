@@ -122,7 +122,7 @@ const limitedPosts = allPosts.slice(0, maxPosts);
                 class="max-w-screen-xl mx-auto flex flex-col lg:flex lg:flex-row"
             >
                 <div class="basis-1/2 px-4">
-                    <form>
+                    <form id="form">
                         <div class="space-y-12">
                             <div class="border-b border-gray-900/10 pb-12">
                                 <h2
@@ -148,7 +148,7 @@ const limitedPosts = allPosts.slice(0, maxPosts);
                                         <div class="mt-2">
                                             <input
                                                 type="text"
-                                                name="first-name"
+                                                name="nombre"
                                                 id="first-name"
                                                 autocomplete="given-name"
                                                 class="w-full rounded-md border-0 py-1.5 text-gray-900 ring-1 focus:ring-2 ring-gray-300 focus:ring-yellow-400 focus:outline-none sm:text-sm"
@@ -202,6 +202,22 @@ const limitedPosts = allPosts.slice(0, maxPosts);
                             </div>
                         </div>
                     </form>
+                    <a class="hidden" id="mailto" href="mailto:omar.ortega@gpprdedomex.com">enviar</a>
+                                        <script>
+                                            document.addEventListener('DOMContentLoaded', function () {
+                                                    const form = document.querySelector("#form");
+                                                    const button = document.querySelector("#mailto") as HTMLAnchorElement;
+                                                    form.addEventListener('submit', handleSubmit);
+
+                                                    function handleSubmit(event) {
+                                                        event.preventDefault();
+                                                        const formData = new FormData(this);
+                                                        console.log(formData.get('nombre'));
+                                                        button.setAttribute("href", `mailto:omar.ortega@gpprdedomex.com?subject=${formData.get('nombre')}&body=${formData.get('mensaje')}`);
+                                                        button.click();
+                                                    }
+                                                });
+                                        </script>
                 </div>
                 <div class="basis-1/2 my-auto">
                     <img class="" src={vidaDigna.src} alt="" />

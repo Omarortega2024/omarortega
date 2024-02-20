@@ -37,7 +37,7 @@ import imageV from "../images/contact/image-bg.png";
                 </div>
                 <div class="lg:basis-1-2">
                     <div class="px-4">
-                        <form id="form" action="" method="POST">
+                        <form id="form" action="" method="post">
                             <div class="space-y-12">
                                 <div class="border-b border-gray-900/10 pb-12">
                                     <h2
@@ -116,16 +116,21 @@ import imageV from "../images/contact/image-bg.png";
                                                 >Enviar</button
                                             >
                                         </div>
+                                        <a class="hidden" id="mailto" href="mailto:omar.ortega@gpprdedomex.com">enviar</a>
                                         <script>
-                                            const form = document.querySelector("#form");
+                                            document.addEventListener('DOMContentLoaded', function () {
+                                                    const form = document.querySelector("#form");
+                                                    const button = document.querySelector("#mailto") as HTMLAnchorElement;
+                                                    form.addEventListener('submit', handleSubmit);
 
-                                            form.addEventListener('submit', handleSubmit)
-
-                                            function handleSubmit(event){
-                                                event.preventDefault()
-                                                const fom = new FormData(this)
-                                                console.log(fom.get('name'))
-                                            }
+                                                    function handleSubmit(event) {
+                                                        event.preventDefault();
+                                                        const formData = new FormData(this);
+                                                        console.log(formData.get('nombre'));
+                                                        button.setAttribute("href", `mailto:omar.ortega@gpprdedomex.com?subject=${formData.get('nombre')}&body=${formData.get('mensaje')}`);
+                                                        button.click();
+                                                    }
+                                                });
                                         </script>
                                     </div>
                                 </div>
