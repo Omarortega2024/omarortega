@@ -1,0 +1,139 @@
+---
+import Layout from "../layouts/Layout.astro";
+import bg from "../images/contact/background.jpg";
+import imageV from "../images/contact/image-bg.png";
+
+---
+
+<style define:vars={{ 
+    bg: `url("${bg.src}")`,
+    imageV: `url(${imageV.src})`
+    }}>
+    .bg {
+        background-image: var(--bg);
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 100vh;
+    }
+
+    .imgwrapper {
+        background-image: var(--imageV);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    form{
+        padding: 20px;
+    }
+
+    
+</style>
+
+<Layout title="">
+    <section class="flex items-center justify-center bg">
+        <div class="my-20">
+            <div class="bg-white mx-auto flex flex-col lg:flex lg:flex-row container h-4/5 w-4/5 lg:h-3/5 lg:3/5  max-w-screen-xl">
+                <div class="lg:basis-1/2 imgwrapper">
+                </div>
+                <div class="lg:basis-1-2">
+                    <div class="px-4">
+                        <form id="form" action="" method="POST">
+                            <div class="space-y-12">
+                                <div class="border-b border-gray-900/10 pb-12">
+                                    <h2
+                                        class="text-base font-semibold leading-7 text-gray-900"
+                                    >
+                                        Contacto
+                                    </h2>
+                                    <p
+                                        class="mt-1 text-sm leading-6 text-gray-600 lg:pr-44"
+                                    >
+                                        Estoy aquí para escuchar tus preocupaciones
+                                        y trabajar juntos para construir un mejor
+                                        futuro para nuestra comunidad.
+                                    </p>
+
+                                    <div class="mt-10 space-y-6">
+                                        <div class="sm:col-span-3">
+                                            <label
+                                                for="first-name"
+                                                class="block text-sm font-medium leading-6 text-gray-900"
+                                                >Nombre</label
+                                            >
+                                            <div class="mt-2">
+                                                <input
+                                                    type="text"
+                                                    name="nombre"
+                                                    id="first-name"
+                                                    autocomplete="given-name"
+                                                    required
+                                                    class="w-full rounded-md border-0 py-1.5 text-gray-900 ring-1 focus:ring-2 ring-gray-300 focus:ring-yellow-400 focus:outline-none sm:text-sm"
+                                                />
+                                            </div>
+                                        </div>
+
+                                        <div class="gap-x-6 gap-y-8">
+                                            <label
+                                                for="email"
+                                                class="block text-sm font-medium leading-6 text-gray-900"
+                                                >Correo</label
+                                            >
+                                            <div class="mt-2">
+                                                <input
+                                                    id="email"
+                                                    name="email"
+                                                    type="email"
+                                                    autocomplete="email"
+                                                    required
+                                                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:outline-none focus:ring-yellow-400 sm:text-sm sm:leading-6"
+                                                />
+                                            </div>
+                                        </div>
+
+                                        <div class="mt-10 gap-x-6 gap-y-8">
+                                            <div class="sm:col-span-3">
+                                                <label
+                                                    for="mensaje"
+                                                    class="block text-sm font-medium leading-6 text-gray-900"
+                                                    >Mensaje</label
+                                                >
+                                                <div class="mt-2">
+                                                    <textarea
+                                                        name="mensaje"
+                                                        id="mensaje"
+                                                        autocomplete="given-name"
+                                                        required
+                                                        class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:outline-none focus:ring-yellow-400 sm:text-sm sm:leading-6"
+                                                    ></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div>
+                                            <button
+                                                type="submit"
+                                                class="rounded-md w-full lg:w-1/2 bg-yellow-400 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-yellow-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-600"
+                                                >Enviar</button
+                                            >
+                                        </div>
+                                        <script>
+                                            const form = document.querySelector("#form");
+
+                                            form.addEventListener('submit', handleSubmit)
+
+                                            function handleSubmit(event){
+                                                event.preventDefault()
+                                                const fom = new FormData(this)
+                                                console.log(fom.get('name'))
+                                            }
+                                        </script>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</Layout>
