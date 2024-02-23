@@ -20,12 +20,11 @@ import imageThirteen from "../images/home/galeria/img-13.jpg";
 import imageFourteen from "../images/home/galeria/img-14.jpg";
 import imageFifteen from "../images/home/galeria/img-15.jpg";
 
-
 const allPosts = await Astro.glob("./posts/*.md");
 const maxPosts = 3;
 const limitedPosts = allPosts.slice(0, maxPosts);
-
 ---
+
 <style>
     .yellow-bg {
         background-color: #ffc031;
@@ -43,24 +42,30 @@ const limitedPosts = allPosts.slice(0, maxPosts);
         border: 2px solid #ffc031;
     }
     @media only screen and (max-width: 1024px) {
-    #mensaje {
-        border: 1px solid gray;
-    }
-    #email{
-        border: 1px solid gray;  
-    }
-    #first-name{
-        border: 1px solid gray;  
-    }
+        #mensaje {
+            border: 1px solid gray;
+        }
+        #email {
+            border: 1px solid gray;
+        }
+        #first-name {
+            border: 1px solid gray;
+        }
     }
 </style>
 <script is:inline src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
 
-<Layout title="Omar Ortega" description="Conoce de cerca la labor de Omar Ortega en el Estado de México">
+<Layout
+    title="Omar Ortega"
+    description="Conoce de cerca la labor de Omar Ortega en el Estado de México"
+>
     <main>
         <section class="one">
             <video loop muted autoplay width="100%" height="100%">
-                <source src="https://pub-236b6a1111854253bfa86853c8c7d5ae.r2.dev/portada.mp4" type="video/mp4" />
+                <source
+                    src="https://pub-236b6a1111854253bfa86853c8c7d5ae.r2.dev/portada.mp4"
+                    type="video/mp4"
+                />
             </video>
         </section>
         <section>
@@ -99,16 +104,22 @@ const limitedPosts = allPosts.slice(0, maxPosts);
                 </div>
             </div>
         </section>
-        <ul class="juicer-feed max-w-screen-xl" data-feed-id="omar-ortega-alvarez" data-per="18" data-after="translateJuicer()"></ul>
+        <ul
+            class="juicer-feed max-w-screen-xl"
+            data-feed-id="omar-ortega-alvarez"
+            data-per="10"
+            data-after="translateJuicer()"
+        >
+        </ul>
         <script type="text/javascript">
-            jQuery(document).ready(function() {
-              translateJuicer();
+            jQuery(document).ready(function () {
+                translateJuicer();
             });
-          
+
             function translateJuicer() {
-              jQuery('.j-paginate').text("Ver más");
+                jQuery(".j-paginate").text("Ver más");
             }
-          </script>
+        </script>
         <section class="lg:my-20">
             <div class="max-w-screen-xl mx-auto">
                 <div>
@@ -173,7 +184,7 @@ const limitedPosts = allPosts.slice(0, maxPosts);
                                                 name="nombre"
                                                 id="first-name"
                                                 autocomplete="given-name"
-                                                class="w-full rounded-md  py-1.5 text-gray-900 ring-1 focus:ring-2 focus:outline-none  ring-gray-300 focus:ring-yellow-400 sm:text-sm"
+                                                class="w-full rounded-md py-1.5 text-gray-900 ring-1 focus:ring-2 focus:outline-none ring-gray-300 focus:ring-yellow-400 sm:text-sm"
                                             />
                                         </div>
                                     </div>
@@ -190,7 +201,7 @@ const limitedPosts = allPosts.slice(0, maxPosts);
                                                 name="email"
                                                 type="email"
                                                 autocomplete="email"
-                                                class="block w-full rounded-md  py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:outline-none focus:ring-yellow-400 sm:text-sm sm:leading-6"
+                                                class="block w-full rounded-md py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:outline-none focus:ring-yellow-400 sm:text-sm sm:leading-6"
                                             />
                                         </div>
                                     </div>
@@ -207,7 +218,7 @@ const limitedPosts = allPosts.slice(0, maxPosts);
                                                     name="mensaje"
                                                     id="mensaje"
                                                     autocomplete="given-name"
-                                                    class="block w-full rounded-md py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:outline-none  focus:ring-yellow-400 sm:text-sm sm:leading-6"
+                                                    class="block w-full rounded-md py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:outline-none focus:ring-yellow-400 sm:text-sm sm:leading-6"
                                                 ></textarea>
                                             </div>
                                         </div>
@@ -224,22 +235,34 @@ const limitedPosts = allPosts.slice(0, maxPosts);
                             </div>
                         </div>
                     </form>
-                    <a class="hidden" id="mailto" href="mailto:omar.ortega@gpprdedomex.com">enviar</a>
-                                        <script>
-                                            document.addEventListener('DOMContentLoaded', function () {
-                                                    const form = document.querySelector("#form");
-                                                    const button = document.querySelector("#mailto") as HTMLAnchorElement;
-                                                    form.addEventListener('submit', handleSubmit);
+                    <a
+                        class="hidden"
+                        id="mailto"
+                        href="mailto:omar.ortega@gpprdedomex.com">enviar</a
+                    >
+                    <script>
+                        document.addEventListener(
+                            "DOMContentLoaded",
+                            function () {
+                                const form = document.querySelector("#form");
+                                const button = document.querySelector(
+                                    "#mailto",
+                                ) as HTMLAnchorElement;
+                                form.addEventListener("submit", handleSubmit);
 
-                                                    function handleSubmit(event: Event) {
-                                                        event.preventDefault();
-                                                        const formData = new FormData(this);
-                                                        console.log(formData.get('nombre'));
-                                                        button.setAttribute("href", `mailto:omar.ortega@gpprdedomex.com?subject=${formData.get('nombre')}&body=${formData.get('mensaje')}`);
-                                                        button.click();
-                                                    }
-                                                });
-                                        </script>
+                                function handleSubmit(event: Event) {
+                                    event.preventDefault();
+                                    const formData = new FormData(this);
+                                    console.log(formData.get("nombre"));
+                                    button.setAttribute(
+                                        "href",
+                                        `mailto:omar.ortega@gpprdedomex.com?subject=${formData.get("nombre")}&body=${formData.get("mensaje")}`,
+                                    );
+                                    button.click();
+                                }
+                            },
+                        );
+                    </script>
                 </div>
                 <div class="basis-1/2 my-auto">
                     <img class="" src={vidaDigna.src} alt="" />
@@ -248,140 +271,308 @@ const limitedPosts = allPosts.slice(0, maxPosts);
         </section>
         <section>
             <div class="max-w-screen-xl lg:mx-auto">
-                <div class="flex items-center mt-4  pl-4">
-                    <img class="w-5 h-5 object-contain my-auto" src={desliza.src} alt="">
-                    <div class="  pl-2 my-auto">Desliza hacia la derecha</div>
+                <div class="flex items-center mt-4 pl-4">
+                    <img
+                        class="w-5 h-5 object-contain my-auto"
+                        src={desliza.src}
+                        alt=""
+                    />
+                    <div class="pl-2 my-auto">Desliza hacia la derecha</div>
                 </div>
                 <div class="container mx-auto p-4 flex flex-wrap gap-4">
-                    <div class="overflow-x-scroll snap-x snap-mandatory w-full m-0 p-0">
-                        <div class="flex space-x-4 w-[2400px] h-56">  
+                    <div
+                        class="overflow-x-scroll snap-x snap-mandatory w-full m-0 p-0"
+                    >
+                        <div class="flex space-x-4 w-[2400px] h-56">
                             <!--img 1 -->
-                            <div class="relative snap-center group cursor-pointer flex-rrow w-36  md:w-36 lg:w-64 ">
-                                <img class="w-full h-full object-cover rounded-lg" src={imageOne.src} alt="" />
-                                <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 rounded-lg group-hover:rounded-lg transition duration-300"></div>
+                            <div
+                                class="relative snap-center group cursor-pointer flex-rrow w-36 md:w-36 lg:w-64"
+                            >
+                                <img
+                                    class="w-full h-full object-cover rounded-lg"
+                                    src={imageOne.src}
+                                    alt="hola"
+                                />
+                                <div
+                                    class="absolute inset-0  group-hover:bg-opacity-50 rounded-lg group-hover:rounded-lg transition duration-300"
+                                >
+                                </div>
                             </div>
                             <!--img 3-->
-                            <div class="relative snap-center group  cursor-pointer flex-rrow w-36 md:w-36 lg:w-64  ">
-                                <img class="w-full h-full object-cover rounded-lg" src={imageThree.src} alt="" />
-                                <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 rounded-lg group-hover:rounded-lg transition duration-300"></div>
+                            <div
+                                class="relative snap-center group cursor-pointer flex-rrow w-36 md:w-36 lg:w-64"
+                            >
+                                <img
+                                    class="w-full h-full object-cover rounded-lg"
+                                    src={imageThree.src}
+                                    alt=""
+                                />
+                                <div
+                                    class="absolute inset-0  bg-opacity-0 group-hover:bg-opacity-50 rounded-lg group-hover:rounded-lg transition duration-300"
+                                >
+                                </div>
                             </div>
-                        
+
                             <!--img 2-->
-                            <div class="relative snap-center group cursor-pointer flex-row w-36 md:w-36 lg:w-64 ">
-                                <img class="w-full h-full object-cover rounded-lg" src={imageTwo.src} alt="" />
-                                <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 rounded-lg group-hover:rounded-lg transition duration-300"></div>
+                            <div
+                                class="relative snap-center group cursor-pointer flex-row w-36 md:w-36 lg:w-64"
+                            >
+                                <img
+                                    class="w-full h-full object-cover rounded-lg"
+                                    src={imageTwo.src}
+                                    alt=""
+                                />
+                                <div
+                                    class="absolute inset-0  bg-opacity-0 group-hover:bg-opacity-50 rounded-lg group-hover:rounded-lg transition duration-300"
+                                >
+                                </div>
                             </div>
 
                             <!--img 4-->
-                            <div class="relative snap-center group cursor-pointer flex-row w-36 md:w-36 lg:w-64">
-                                <img class="w-full h-full object-cover rounded-lg" src={imageFour.src} alt="" />
-                                <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 rounded-lg group-hover:rounded-lg transition duration-300"></div>
-                              </div>
-                              
-                             <!--img 5--> 
-                              <div class="relative snap-center group cursor-pointer flex-row w-36 md:w-36 lg:w-64">
-                                <img class="w-full h-full object-cover rounded-lg" src={imageFive.src} alt="" />
-                                <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 rounded-lg group-hover:rounded-lg transition duration-300"></div>
-                              </div>
+                            <div
+                                class="relative snap-center group cursor-pointer flex-row w-36 md:w-36 lg:w-64"
+                            >
+                                <img
+                                    class="w-full h-full object-cover rounded-lg"
+                                    src={imageFour.src}
+                                    alt=""
+                                />
+                                <div
+                                    class="absolute inset-0 bg-opacity-0 group-hover:bg-opacity-50 rounded-lg group-hover:rounded-lg transition duration-300"
+                                >
+                                </div>
+                            </div>
 
-                              <!--img 6--> 
-                              <div class="relative snap-center group cursor-pointer flex-row w-36 md:w-36 lg:w-64">
-                                <img class="w-full h-full object-cover rounded-lg" src={imageSix.src} alt="" />
-                                <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 rounded-lg group-hover:rounded-lg transition duration-300"></div>
-                              </div>
+                            <!--img 5-->
+                            <div
+                                class="relative snap-center group cursor-pointer flex-row w-36 md:w-36 lg:w-64"
+                            >
+                                <img
+                                    class="w-full h-full object-cover rounded-lg"
+                                    src={imageFive.src}
+                                    alt=""
+                                />
+                                <div
+                                    class="absolute inset-0 bg-opacity-0 group-hover:bg-opacity-50 rounded-lg group-hover:rounded-lg transition duration-300"
+                                >
+                                </div>
+                            </div>
 
-                               <!--img 7--> 
-                               <div class="relative snap-center group cursor-pointer flex-row w-36 md:w-36 lg:w-64">
-                                <img class="w-full h-full object-cover rounded-lg" src={imageSeven.src} alt="" />
-                                <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 rounded-lg group-hover:rounded-lg transition duration-300"></div>
-                              </div>
+                            <!--img 6-->
+                            <div
+                                class="relative snap-center group cursor-pointer flex-row w-36 md:w-36 lg:w-64"
+                            >
+                                <img
+                                    class="w-full h-full object-cover rounded-lg"
+                                    src={imageSix.src}
+                                    alt=""
+                                />
+                                <div
+                                    class="absolute inset-0  bg-opacity-0 group-hover:bg-opacity-50 rounded-lg group-hover:rounded-lg transition duration-300"
+                                >
+                                </div>
+                            </div>
 
-                              <!--img 8--> 
-                              <div class="relative snap-center group cursor-pointer flex-row w-36 md:w-36 lg:w-64">
-                                <img class="w-full h-full object-cover rounded-lg" src={imageEight.src} alt="" />
-                                <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 rounded-lg group-hover:rounded-lg transition duration-300"></div>
-                              </div>
+                            <!--img 7-->
+                            <div
+                                class="relative snap-center group cursor-pointer flex-row w-36 md:w-36 lg:w-64"
+                            >
+                                <img
+                                    class="w-full h-full object-cover rounded-lg"
+                                    src={imageSeven.src}
+                                    alt=""
+                                />
+                                <div
+                                    class="absolute inset-0  bg-opacity-0 group-hover:bg-opacity-50 rounded-lg group-hover:rounded-lg transition duration-300"
+                                >
+                                </div>
+                            </div>
 
-                              <!--img 9--> 
-                              <div class="relative snap-center group cursor-pointer flex-row w-36 md:w-36 lg:w-64">
-                                <img class="w-full h-full object-cover rounded-lg" src={imageNine.src} alt="" />
-                                <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 rounded-lg group-hover:rounded-lg transition duration-300"></div>
-                              </div>
+                            <!--img 8-->
+                            <div
+                                class="relative snap-center group cursor-pointer flex-row w-36 md:w-36 lg:w-64"
+                            >
+                                <img
+                                    class="w-full h-full object-cover rounded-lg"
+                                    src={imageEight.src}
+                                    alt=""
+                                />
+                                <div
+                                    class="absolute inset-0  bg-opacity-0 group-hover:bg-opacity-50 rounded-lg group-hover:rounded-lg transition duration-300"
+                                >
+                                </div>
+                            </div>
 
-                              <!--img 10--> 
-                              <div class="relative snap-center group cursor-pointer flex-row w-36 md:w-36 lg:w-64">
-                                <img class="w-full h-full object-cover rounded-lg" src={imageTen.src} alt="" />
-                                <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 rounded-lg group-hover:rounded-lg transition duration-300"></div>
-                              </div>
+                            <!--img 9-->
+                            <div
+                                class="relative snap-center group cursor-pointer flex-row w-36 md:w-36 lg:w-64 "
+                            >
+                                <img
+                                    class="w-full h-full object-cover rounded-lg"
+                                    src={imageNine.src}
+                                    alt=""
+                                />
+                                <div
+                                    class="absolute inset-0  bg-opacity-0 group-hover:bg-opacity-50 rounded-lg group-hover:rounded-lg transition duration-300"
+                                >
+                                </div>
+                            </div>
 
-                              <!--img 11--> 
-                              <div class="relative snap-center group cursor-pointer flex-row w-36 md:w-36 lg:w-64">
-                                <img class="w-full h-full object-cover rounded-lg" src={imageEleven.src} alt="" />
-                                <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 rounded-lg group-hover:rounded-lg transition duration-300"></div>
-                              </div>
+                            <!--img 10-->
+                            <div
+                                class="relative snap-center group cursor-pointer flex-row w-36 md:w-36 lg:w-64"
+                            >
+                                <img
+                                    class="w-full h-full object-cover rounded-lg"
+                                    src={imageTen.src}
+                                    alt=""
+                                />
+                                <div
+                                    class="absolute inset-0  bg-opacity-0 group-hover:bg-opacity-50 rounded-lg group-hover:rounded-lg transition duration-300"
+                                >
+                                </div>
+                            </div>
 
-                              <!--img 12--> 
-                              <div class="relative snap-center group cursor-pointer flex-row w-36 md:w-36 lg:w-64">
-                                <img class="w-full h-full object-cover rounded-lg" src={imageTwelve.src} alt="" />
-                                <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 rounded-lg group-hover:rounded-lg transition duration-300"></div>
-                              </div>
+                            <!--img 11-->
+                            <div
+                                class="relative snap-center group cursor-pointer flex-row w-36 md:w-36 lg:w-64"
+                            >
+                                <img
+                                    class="w-full h-full object-cover rounded-lg"
+                                    src={imageEleven.src}
+                                    alt=""
+                                />
+                                <div
+                                    class="absolute inset-0  bg-opacity-0 group-hover:bg-opacity-50 rounded-lg group-hover:rounded-lg transition duration-300"
+                                >
+                                </div>
+                            </div>
 
-                              <!--img 13--> 
-                              <div class="relative snap-center group cursor-pointer flex-row w-36 md:w-36 lg:w-64">
-                                <img class="w-full h-full object-cover rounded-lg" src={imageThirteen.src} alt="" />
-                                <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 rounded-lg group-hover:rounded-lg transition duration-300"></div>
-                              </div>
+                            <!--img 12-->
+                            <div
+                                class="relative snap-center group cursor-pointer flex-row w-36 md:w-36 lg:w-64"
+                            >
+                                <img
+                                    class="w-full h-full object-cover rounded-lg"
+                                    src={imageTwelve.src}
+                                    alt=""
+                                />
+                                <div
+                                    class="absolute inset-0  bg-opacity-0 group-hover:bg-opacity-50 rounded-lg group-hover:rounded-lg transition duration-300"
+                                >
+                                </div>
+                            </div>
 
-                              <!--img 14--> 
-                              <div class="relative snap-center group cursor-pointer flex-row w-36 md:w-36 lg:w-64">
-                                <img class="w-full h-full object-cover rounded-lg" src={imageFourteen.src} alt="" />
-                                <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 rounded-lg group-hover:rounded-lg transition duration-300"></div>
-                              </div>
+                            <!--img 13-->
+                            <div
+                                class="relative snap-center group cursor-pointer flex-row w-36 md:w-36 lg:w-64"
+                            >
+                                <img
+                                    class="w-full h-full object-cover rounded-lg"
+                                    src={imageThirteen.src}
+                                    alt=""
+                                />
+                                <div
+                                    class="absolute inset-0 bg-opacity-0 group-hover:bg-opacity-50 rounded-lg group-hover:rounded-lg transition duration-300"
+                                >
+                                </div>
+                            </div>
 
-                              <!--img 15--> 
-                              <div class="relative snap-center group cursor-pointer flex-row w-36 md:w-36 lg:w-64">
-                                <img class="w-full h-full object-cover rounded-lg" src={imageFifteen.src} alt="" />
-                                <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 rounded-lg group-hover:rounded-lg transition duration-300"></div>
-                              </div>
+                            <!--img 14-->
+                            <div
+                                class="relative snap-center group cursor-pointer flex-row w-36 md:w-36 lg:w-64"
+                            >
+                                <img
+                                    class="w-full h-full object-cover rounded-lg"
+                                    src={imageFourteen.src}
+                                    alt=""
+                                />
+                                <div
+                                    class="absolute inset-0  bg-opacity-0 group-hover:bg-opacity-50 rounded-lg group-hover:rounded-lg transition duration-300"
+                                >
+                                </div>
+                            </div>
+
+                            <!--img 15-->
+                            <div
+                                class="relative snap-center group cursor-pointer flex-row w-36 md:w-36 lg:w-64"
+                            >
+                                <img
+                                    class="w-full h-full object-cover rounded-lg"
+                                    src={imageFifteen.src}
+                                    alt=""
+                                />
+                                <div
+                                    class="absolute inset-0  bg-opacity-0 group-hover:bg-opacity-50 rounded-lg group-hover:rounded-lg transition duration-300"
+                                >
+                                </div>
+                            </div>
                         </div>
                     </div>
-                        
-                <div id="fullscreen" class="fixed inset-0 z-50 hidden overflow-hidden bg-black bg-opacity-90">
-                    <div class="absolute inset-0 flex flex-col text-gray-500 justify-center items-center">
-                        <img id="fullscreen-image" src="" alt="Fullscreen Image" class="max-h-96 mx-auto" />
-                        <p class="text-sm my-4">Da click en cualquier lugar para Cerrar</p>
+
+                    <div
+                        id="fullscreen"
+                        class="fixed inset-0 z-50 hidden overflow-hidden bg-black bg-opacity-90"
+                    >
+                        <div
+                            class="absolute inset-0 flex flex-col text-gray-500 justify-center items-center"
+                        >
+                            <img
+                                id="fullscreen-image"
+                                src=""
+                                alt="Fullscreen Image"
+                                class="max-h-96 mx-auto"
+                            />
+                            <p class="text-sm my-4">
+                                Da click en cualquier lugar para Cerrar
+                            </p>
+                        </div>
                     </div>
                 </div>
-           
-             </div>
-            
-              <script>
-              window.addEventListener("DOMContentLoaded", function () {
-  document.querySelectorAll('.group').forEach(item => {
-    item.addEventListener('click', function () {
-      const imageElement = this.querySelector('img');
-      const fullScreen = document.getElementById('fullscreen-image') as HTMLImageElement;
 
-      if (imageElement instanceof HTMLImageElement && fullScreen) {
-        const imageUrl = imageElement.src;
-        fullScreen.src = imageUrl;
-        document.getElementById('fullscreen')?.classList.toggle('hidden');
-      }
-    });
+                <script>
+                    window.addEventListener("DOMContentLoaded", function () {
+                        document.querySelectorAll(".group").forEach((item) => {
+                            item.addEventListener("click", function () {
+                                const imageElement = this.querySelector("img");
+                                const fullScreen = document.getElementById(
+                                    "fullscreen-image",
+                                ) as HTMLImageElement;
 
-    // Agregar manejo de errores al cargar imágenes
-    item.querySelector('img')?.addEventListener('error', function () {
-      console.error('Error al cargar la imagen:', this.src);
-    });
-  });
+                                if (
+                                    imageElement instanceof HTMLImageElement &&
+                                    fullScreen
+                                ) {
+                                    const imageUrl = imageElement.src;
+                                    fullScreen.src = imageUrl;
+                                    document
+                                        .getElementById("fullscreen")
+                                        ?.classList.toggle("hidden");
+                                }
+                            });
 
-  document.getElementById('fullscreen')?.addEventListener('click', function () {
-    this.classList.add('hidden');
-  });
+                            // Agregar manejo de errores al cargar imágenes
+                            item.querySelector("img")?.addEventListener(
+                                "error",
+                                function () {
+                                    console.error(
+                                        "Error al cargar la imagen:",
+                                        this.src,
+                                    );
+                                },
+                            );
+                        });
 
-  console.log("Las imágenes sí se componen");
-});
-              </script>
+                        document
+                            .getElementById("fullscreen")
+                            ?.addEventListener("click", function () {
+                                this.classList.add("hidden");
+                            });
+
+                        console.log("Las imágenes sí se componen");
+                    });
+                </script>
+            </div>
         </section>
     </main>
     <script type="text/javascript" src="https://www.juicer.io/embed/omar-ortega-alvarez/embed-code.js" async defer></script>
