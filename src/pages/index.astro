@@ -357,28 +357,30 @@ const limitedPosts = allPosts.slice(0, maxPosts);
             
               <script>
               window.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll('.group').forEach(item => {
+    item.addEventListener('click', function () {
+      const imageElement = this.querySelector('img');
+      const fullScreen = document.getElementById('fullscreen-image') as HTMLImageElement;
 
-                // Manejar clic en la imagen para pantalla completa
-                document.querySelectorAll('.group').forEach(item => {
-                    item.addEventListener('click', function () {
-                        const imageElement = this.querySelector('img');
-                        const fullScreen = document.getElementById('fullscreen-image') as HTMLImageElement;
+      if (imageElement instanceof HTMLImageElement && fullScreen) {
+        const imageUrl = imageElement.src;
+        fullScreen.src = imageUrl;
+        document.getElementById('fullscreen')?.classList.toggle('hidden');
+      }
+    });
 
-                        if (imageElement instanceof HTMLImageElement && fullScreen) {
-                            const imageUrl = imageElement.src;
-                            fullScreen.src = imageUrl;
-                            document.getElementById('fullscreen')?.classList.toggle('hidden');
-                        }
-                    });
-                });
+    // Agregar manejo de errores al cargar imágenes
+    item.querySelector('img')?.addEventListener('error', function () {
+      console.error('Error al cargar la imagen:', this.src);
+    });
+  });
 
-                // Cerrar pantalla completa al hacer clic fuera de la imagen
-                document.getElementById('fullscreen')?.addEventListener('click', function () {
-                    this.classList.add('hidden');
-                });
+  document.getElementById('fullscreen')?.addEventListener('click', function () {
+    this.classList.add('hidden');
+  });
 
-                console.log("Las imágenes sí se componen");
-                });
+  console.log("Las imágenes sí se componen");
+});
               </script>
         </section>
     </main>
