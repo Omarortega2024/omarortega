@@ -54,6 +54,7 @@ const limitedPosts = allPosts.slice(0, maxPosts);
     }
     }
 </style>
+<script is:inline src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
 
 <Layout title="Omar Ortega" description="Conoce de cerca la labor de Omar Ortega en el Estado de México">
     <main>
@@ -98,8 +99,16 @@ const limitedPosts = allPosts.slice(0, maxPosts);
                 </div>
             </div>
         </section>
-        <script type="text/javascript" src="https://www.juicer.io/embed/omar-ortega-alvarez/embed-code.js" async defer></script>
-        <ul class="juicer-feed" data-feed-id="omar-ortega-alvarez" data-per="15"></ul>
+        <ul class="juicer-feed max-w-screen-xl" data-feed-id="omar-ortega-alvarez" data-per="18" data-after="translateJuicer()"></ul>
+        <script type="text/javascript">
+            jQuery(document).ready(function() {
+              translateJuicer();
+            });
+          
+            function translateJuicer() {
+              jQuery('.j-paginate').text("Ver más");
+            }
+          </script>
         <section class="lg:my-20">
             <div class="max-w-screen-xl mx-auto">
                 <div>
@@ -373,4 +382,5 @@ const limitedPosts = allPosts.slice(0, maxPosts);
               </script>
         </section>
     </main>
+    <script type="text/javascript" src="https://www.juicer.io/embed/omar-ortega-alvarez/embed-code.js" async defer></script>
 </Layout>
