@@ -105,9 +105,16 @@ const limitedPosts = allPosts.slice(0, maxPosts);
             </div>
         </section>
         <ul
-            class="juicer-feed max-w-screen-xl"
+            class="juicer-feed max-w-screen-xl hidden lg:block"
             data-feed-id="omar-ortega-alvarez"
             data-per="10"
+            data-after="translateJuicer()"
+        >
+        </ul>
+        <ul
+            class="juicer-feed max-w-screen-xl lg:hidden"
+            data-feed-id="omar-ortega-alvarez"
+            data-per="4"
             data-after="translateJuicer()"
         >
         </ul>
