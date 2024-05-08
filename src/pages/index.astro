@@ -19,13 +19,101 @@ import imageTwelve from "../images/home/galeria/img-12.jpg";
 import imageThirteen from "../images/home/galeria/img-13.jpg";
 import imageFourteen from "../images/home/galeria/img-14.jpg";
 import imageFifteen from "../images/home/galeria/img-15.jpg";
+import propuestaUno from "../images/propuestas/agua.webp";
+import propuestaDos from "../images/propuestas/mascota.webp";
+import propuestaTres from "../images/propuestas/pepenadores.webp";
+import propuestaCuatro from "../images/propuestas/universitarios.webp";
+import propuestaCinco from "../images/propuestas/emprendedor.webp";
+import propuestaSeis from "../images/propuestas/gas-pimienta.webp";
+import propuestaSiete from "../images/propuestas/conectividad.webp";
+import propuestaOcho from "../images/propuestas/estacionamiento.webp";
 
 const allPosts = await Astro.glob("./posts/*.md");
 const maxPosts = 3;
 const limitedPosts = allPosts.slice(0, maxPosts);
 ---
 
-<style>
+<style define:vars={{ 
+    propuestaUno: `url("${propuestaUno.src}")`,
+    propuestaDos: `url(${ propuestaDos.src})`,
+    propuestaTres: `url(${ propuestaTres.src})`,
+    propuestaCuatro: `url(${propuestaCuatro.src})`,
+    propuestaCinco: `url(${propuestaCinco.src})`,
+    propuestaSeis: `url(${propuestaSeis.src})`,
+    propuestaSiete: `url(${propuestaSiete.src})`,
+    propuestaOcho: `url(${propuestaOcho.src})`,
+    }}>
+    #propuestaUno{
+        background-image: var(--propuestaUno);
+        background-size: cover;
+        background-position: center;
+    }
+    #propuestaDos{
+        background-image: var(--propuestaDos);
+        background-size: cover;
+        background-position: center;
+    }
+    #propuestaTres{
+        background-image: var(--propuestaTres);
+        background-size: cover;
+        background-position: center;
+    }
+    #propuestaCuatro{
+        background-image: var(--propuestaCuatro);
+        background-size: cover;
+        background-position: center;
+    }
+    #propuestaCinco{
+        background-image: var(--propuestaCinco);
+        background-size: cover;
+        background-position: center;
+    }
+    #propuestaSeis{
+        background-image: var(--propuestaSeis);
+        background-size: cover;
+        background-position: center;
+    }
+    #propuestaSiete{
+        background-image: var(--propuestaSiete);
+        background-size: cover;
+        background-position: center;
+    }
+    #propuestaOcho{
+        background-image: var(--propuestaOcho);
+        background-size: cover;
+        background-position: center;
+    }
+
+
+
+    #arrow{
+        margin-left: 6px;
+        animation: arrowRight 2s infinite ease-in-out;
+        color: #ffd300;
+    }
+    @keyframes arrowRight{
+        0%{
+            transform: translateX(0);
+        }
+        100%{
+            transform: translateX(5px)
+        }
+    }
+    .propuestasUl {
+        width: calc(500px * 8);
+        display: flex;
+    }
+    @media screen and (max-width: 768px) {
+        .propuestasUl {
+            width: calc(100% * 8);
+            display: flex;
+        }
+    }
+    .propuestasUl li {
+        margin-left: 5px;
+        margin-right: 5px;
+        width: 12.5%;
+    }
     .yellow-bg {
         background-color: #ffc031;
         display: inline-block;
@@ -61,12 +149,185 @@ const limitedPosts = allPosts.slice(0, maxPosts);
 >
     <main>
         <section class="one">
-            <video loop muted autoplay width="100%" height="100%">
+            <img
+                src="https://pub-236b6a1111854253bfa86853c8c7d5ae.r2.dev/portada-24.webp"
+                alt="Foto de Omar ortega"
+            />
+            <video
+                class="hidden"
+                loop
+                muted
+                autoplay
+                width="100%"
+                height="100%"
+            >
                 <source
                     src="https://pub-236b6a1111854253bfa86853c8c7d5ae.r2.dev/portada.mp4"
                     type="video/mp4"
                 />
             </video>
+        </section>
+
+        <section class="max-w-screen-xl mx-auto">
+            <div class="text-center my-10 mx-2">
+                <div class="flex justify-center">
+                    <p>Propuestas 2024 | Dezliza</p>
+                    <p id="arrow">&rarr;</p>
+                </div>
+                <h2 class="text-4xl font-semibold">
+                    Juntos podemos <span class="text-[#ffd300]">hacer realidad</span> estas propuestas
+                </h2>
+            </div>
+            <div class="overflow-x-scroll snap-x snap-mandatory my-10">
+                <ul class="propuestasUl">
+                    <li class="bg-gray-100 rounded-xl snap-center">
+                        <div id="propuestaUno" class="bg-yellow-400 h-44 md:h-72 rounded-t-xl"></div>
+                        <div class="p-4 md:p-10 space-y-4">
+                            <h3 class="font-semibold text-2xl">
+                                <span class="text-[#ffd300]">|</span> Juticia Hídrica
+                            </h3>
+                            <p>
+                                Esta iniciativa contempla la sensibilización
+                                respecto al cuidado y la protección del agua,
+                                además plantea que el Estado pueda garantizar el
+                                acceso a través de protocolos, acciones y
+                                mecanismos que sean evaluables, así como
+                                sancionar su negligencia.
+                            </p>
+                        </div>
+                    </li>
+                    <li class="bg-gray-100 rounded-xl snap-center">
+                        <div id="propuestaDos" class="bg-yellow-400 h-44 md:h-72 rounded-t-xl"></div>
+                        <div class="p-4 md:p-10 space-y-4">
+                            <h3 class="font-semibold text-2xl">
+                                <span class="text-[#ffd300]">|</span> Ley de protección y cuidado de los animales del
+                                hogar
+                            </h3>
+                            <p>
+                                México es uno de los países que registra mayor
+                                maltrato animal, incluso es considerado uno de
+                                los peores lugares para las mascotas, por ello,
+                                esta propuesta tiene por objetivo otorgar
+                                protección a los animales del hogar, garantizar
+                                su bienestar, desarrollo natural y un entorno
+                                favorable, así como evitarles maltrato,
+                                sufrimiento, zoofilia y su sacrificio
+                                injustificado.
+                            </p>
+                        </div>
+                    </li>
+                    <li class="bg-gray-100 rounded-xl snap-center">
+                        <div id="propuestaTres" class="bg-yellow-400 h-44 md:h-72 rounded-t-xl"></div>
+                        <div class="p-4 md:p-10 space-y-4">
+                            <h3 class="font-semibold text-2xl">
+                                <span class="text-[#ffd300]">|</span> Reconocimiento de las personas pepenadoras y sus
+                                derechos laborales
+                            </h3>
+                            <p>
+                                Plantea otorgar reconocimiento y seguridad
+                                social a las personas que realizan actividades
+                                de recolección, acopio y reciclaje que
+                                participan dentro del proceso de manejo integral
+                                de residuo, con el objetivo de mejorar sus
+                                condiciones laborales y de calidad de vida.
+                            </p>
+                        </div>
+                    </li>
+                    <li class="bg-gray-100 rounded-xl snap-center">
+                        <div id="propuestaCuatro" class="bg-yellow-400 h-44 md:h-72 rounded-t-xl"></div>
+                        <div class="p-4 md:p-10 space-y-4">
+                            <h3 class="font-semibold text-2xl">
+                                <span class="text-[#ffd300]">|</span> Derechos económicos para las juventudes,
+                                incluyendo el acceso a un empleo digno
+                            </h3>
+                            <p>
+                                Busca establecer como obligación del Estado
+                                garantizar el primer empleo formal de las y los
+                                jóvenes mexiquenses con el objetivo de que
+                                puedan insertarse en el ámbito con todos los
+                                derechos laborales reconocidos por la Ley.
+                            </p>
+                        </div>
+                    </li>
+                    <li class="bg-gray-100 rounded-xl snap-center">
+                        <div id="propuestaCinco" class="bg-yellow-400 h-44 md:h-72 rounded-t-xl"></div>
+                        <div class="p-4 md:p-10 space-y-4">
+                            <h3 class="font-semibold text-2xl">
+                                <span class="text-[#ffd300]">|</span> Ley de fomento al emprendimiento
+                            </h3>
+                            <p>
+                                Contempla impulsar el crecimiento económico
+                                mediante el estímulo al espíritu emprendedor e
+                                iniciativa productiva de la ciudadanía,
+                                propiciando su incorporación al mercado y
+                                economía estatal, como actores fundamentales que
+                                garanticen el desarrollo social.
+                            </p>
+                        </div>
+                    </li>
+                    <li class="bg-gray-100 rounded-xl snap-center">
+                        <div id="propuestaSeis" class="bg-yellow-400 h-44 md:h-72 rounded-t-xl"></div>
+                        <div class="p-4 md:p-10 space-y-4">
+                            <h3 class="font-semibold text-2xl">
+                                <span class="text-[#ffd300]">|</span> Legalización del uso y portación de armas no
+                                letales para la defensa personal
+                            </h3>
+                            <p>
+                                Ante el aumento de la violencia e inseguridad en
+                                el Estado de México, esta propuesta permite que
+                                la población pueda usar gas pimienta y teaser
+                                como medio para defenderse ante situaciones que
+                                generen amenaza y expongan su integridad física
+                                o moral; este tipo de armas no letales,
+                                justamente no representan un peligro al
+                                emplearse, pero permite ganar tiempo para que la
+                                víctima pueda ponerse a salvo.
+                            </p>
+                        </div>
+                    </li>
+                    <li class="bg-gray-100 rounded-xl snap-center">
+                        <div id="propuestaSiete" class="bg-yellow-400 h-44 md:h-72 rounded-t-xl"></div>
+                        <div class="p-4 md:p-10 space-y-4">
+                            <h3 class="font-semibold text-2xl">
+                                <span class="text-[#ffd300]">|</span> Alfabetización digital
+                            </h3>
+                            <p>
+                                Acortar la brecha digital que existe en nuestro
+                                Estado y que todas y todos tengan la posibilidad
+                                de ejercer su derecho a la conectividad;
+                                permitirá no solo el acceso a la información
+                                sino también, ampliar las posibilidades y
+                                herramientas con las que se cuentan para
+                                desarrollar otras habilidades.
+                            </p>
+                        </div>
+                    </li>
+                    <li class="bg-gray-100 rounded-xl snap-center">
+                        <div id="propuestaOcho" class="bg-yellow-400 h-44 md:h-72 rounded-t-xl"></div>
+                        <div class="p-4 md:p-10 space-y-4">
+                            <h3 class="font-semibold text-2xl">
+                                <span class="text-[#ffd300]">|</span> Gratuidad de los estacionamientos; seguro por
+                                robo y daño total o parcial del vehículo
+                            </h3> 
+                            <p>
+                                Los estacionamientos públicos, en su mayoría, no
+                                cuentan con una reglamentación estandarizada y
+                                por ello, pueden llegar a ser abusivos para los
+                                usuarios, incluso dejar en estado de
+                                vulnerabilidad a sus bienes.
+                            </p>
+                            <p>
+                                Entre otras cosas, contempla el no cobro cuando
+                                se consuma en plazas públicas, la consideración
+                                de un seguro total o parcial en caso de daños,
+                                así como garantizar condiciones mínimas y de
+                                seguridad en los espacios destinados a esta
+                                actividad.
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </section>
         <section>
             <div class="max-w-screen-xl mx-auto px-1">
@@ -301,7 +562,7 @@ const limitedPosts = allPosts.slice(0, maxPosts);
                                     alt="hola"
                                 />
                                 <div
-                                    class="absolute inset-0  group-hover:bg-opacity-50 rounded-lg group-hover:rounded-lg transition duration-300"
+                                    class="absolute inset-0 group-hover:bg-opacity-50 rounded-lg group-hover:rounded-lg transition duration-300"
                                 >
                                 </div>
                             </div>
@@ -315,7 +576,7 @@ const limitedPosts = allPosts.slice(0, maxPosts);
                                     alt=""
                                 />
                                 <div
-                                    class="absolute inset-0  bg-opacity-0 group-hover:bg-opacity-50 rounded-lg group-hover:rounded-lg transition duration-300"
+                                    class="absolute inset-0 bg-opacity-0 group-hover:bg-opacity-50 rounded-lg group-hover:rounded-lg transition duration-300"
                                 >
                                 </div>
                             </div>
@@ -330,7 +591,7 @@ const limitedPosts = allPosts.slice(0, maxPosts);
                                     alt=""
                                 />
                                 <div
-                                    class="absolute inset-0  bg-opacity-0 group-hover:bg-opacity-50 rounded-lg group-hover:rounded-lg transition duration-300"
+                                    class="absolute inset-0 bg-opacity-0 group-hover:bg-opacity-50 rounded-lg group-hover:rounded-lg transition duration-300"
                                 >
                                 </div>
                             </div>
@@ -375,7 +636,7 @@ const limitedPosts = allPosts.slice(0, maxPosts);
                                     alt=""
                                 />
                                 <div
-                                    class="absolute inset-0  bg-opacity-0 group-hover:bg-opacity-50 rounded-lg group-hover:rounded-lg transition duration-300"
+                                    class="absolute inset-0 bg-opacity-0 group-hover:bg-opacity-50 rounded-lg group-hover:rounded-lg transition duration-300"
                                 >
                                 </div>
                             </div>
@@ -390,7 +651,7 @@ const limitedPosts = allPosts.slice(0, maxPosts);
                                     alt=""
                                 />
                                 <div
-                                    class="absolute inset-0  bg-opacity-0 group-hover:bg-opacity-50 rounded-lg group-hover:rounded-lg transition duration-300"
+                                    class="absolute inset-0 bg-opacity-0 group-hover:bg-opacity-50 rounded-lg group-hover:rounded-lg transition duration-300"
                                 >
                                 </div>
                             </div>
@@ -405,14 +666,14 @@ const limitedPosts = allPosts.slice(0, maxPosts);
                                     alt=""
                                 />
                                 <div
-                                    class="absolute inset-0  bg-opacity-0 group-hover:bg-opacity-50 rounded-lg group-hover:rounded-lg transition duration-300"
+                                    class="absolute inset-0 bg-opacity-0 group-hover:bg-opacity-50 rounded-lg group-hover:rounded-lg transition duration-300"
                                 >
                                 </div>
                             </div>
 
                             <!--img 9-->
                             <div
-                                class="relative snap-center group cursor-pointer flex-row w-36 md:w-36 lg:w-64 "
+                                class="relative snap-center group cursor-pointer flex-row w-36 md:w-36 lg:w-64"
                             >
                                 <img
                                     class="w-full h-full object-cover rounded-lg"
@@ -420,7 +681,7 @@ const limitedPosts = allPosts.slice(0, maxPosts);
                                     alt=""
                                 />
                                 <div
-                                    class="absolute inset-0  bg-opacity-0 group-hover:bg-opacity-50 rounded-lg group-hover:rounded-lg transition duration-300"
+                                    class="absolute inset-0 bg-opacity-0 group-hover:bg-opacity-50 rounded-lg group-hover:rounded-lg transition duration-300"
                                 >
                                 </div>
                             </div>
@@ -435,7 +696,7 @@ const limitedPosts = allPosts.slice(0, maxPosts);
                                     alt=""
                                 />
                                 <div
-                                    class="absolute inset-0  bg-opacity-0 group-hover:bg-opacity-50 rounded-lg group-hover:rounded-lg transition duration-300"
+                                    class="absolute inset-0 bg-opacity-0 group-hover:bg-opacity-50 rounded-lg group-hover:rounded-lg transition duration-300"
                                 >
                                 </div>
                             </div>
@@ -450,7 +711,7 @@ const limitedPosts = allPosts.slice(0, maxPosts);
                                     alt=""
                                 />
                                 <div
-                                    class="absolute inset-0  bg-opacity-0 group-hover:bg-opacity-50 rounded-lg group-hover:rounded-lg transition duration-300"
+                                    class="absolute inset-0 bg-opacity-0 group-hover:bg-opacity-50 rounded-lg group-hover:rounded-lg transition duration-300"
                                 >
                                 </div>
                             </div>
@@ -465,7 +726,7 @@ const limitedPosts = allPosts.slice(0, maxPosts);
                                     alt=""
                                 />
                                 <div
-                                    class="absolute inset-0  bg-opacity-0 group-hover:bg-opacity-50 rounded-lg group-hover:rounded-lg transition duration-300"
+                                    class="absolute inset-0 bg-opacity-0 group-hover:bg-opacity-50 rounded-lg group-hover:rounded-lg transition duration-300"
                                 >
                                 </div>
                             </div>
@@ -495,7 +756,7 @@ const limitedPosts = allPosts.slice(0, maxPosts);
                                     alt=""
                                 />
                                 <div
-                                    class="absolute inset-0  bg-opacity-0 group-hover:bg-opacity-50 rounded-lg group-hover:rounded-lg transition duration-300"
+                                    class="absolute inset-0 bg-opacity-0 group-hover:bg-opacity-50 rounded-lg group-hover:rounded-lg transition duration-300"
                                 >
                                 </div>
                             </div>
@@ -510,7 +771,7 @@ const limitedPosts = allPosts.slice(0, maxPosts);
                                     alt=""
                                 />
                                 <div
-                                    class="absolute inset-0  bg-opacity-0 group-hover:bg-opacity-50 rounded-lg group-hover:rounded-lg transition duration-300"
+                                    class="absolute inset-0 bg-opacity-0 group-hover:bg-opacity-50 rounded-lg group-hover:rounded-lg transition duration-300"
                                 >
                                 </div>
                             </div>
@@ -582,5 +843,9 @@ const limitedPosts = allPosts.slice(0, maxPosts);
             </div>
         </section>
     </main>
-    <script type="text/javascript" src="https://www.juicer.io/embed/omar-ortega-alvarez/embed-code.js" async defer></script>
+    <script
+        type="text/javascript"
+        src="https://www.juicer.io/embed/omar-ortega-alvarez/embed-code.js"
+        async
+        defer></script>
 </Layout>
