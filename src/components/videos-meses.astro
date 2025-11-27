@@ -1,0 +1,97 @@
+---
+const base = "https://cdn.omarortegamx.com.mx/";
+const videos = [
+  { label: "Septiembre 2024", file: "septiembre-2024-ooa-prd-comprimido-v2.mp4", poster: "sep-2024.png" },
+  { label: "Octubre 2024", file: "octubre-2024-ooa-prd-comprimido.mp4", poster: "oct-2024.png" },
+  { label: "Noviembre 2024", file: "noviembre-2024-ooa-prd-comprimido.mp4", poster: "nov-2024.png" },
+  { label: "Diciembre 2024", file: "diciembre-2024-ooa-prd-comprimido.mp4", poster: "dic-2024.png" },
+  { label: "Enero 2025", file: "enero-2025-ooa-prd-comprimido.mp4", poster: "ene.2025.png" },
+  { label: "Febrero 2025", file: "febrero-2025-ooa-prd-comprimido.mp4", poster: "feb-2025.png" },
+  { label: "Marzo 2025", file: "marzo-2025-ooa-prd-comprimido.mp4", poster: "marzo-2025.png" },
+  { label: "Abril 2025", file: "abril-2025-ooa-prd-comprimido.mp4", poster: "abril-2025.png" },
+  { label: "Mayo 2025", file: "mayo-2025-ooa-prd-comprimido.mp4", poster: "mayo-2025.png" },
+  { label: "Junio 2025", file: "junio-2025-ooa-prd-comprimido.mp4", poster: "junio-2025.png" },
+  { label: "Agosto 2025", file: "agosto-2025-ooa-prd.mp4", poster: "agosto-2025.png" },
+  { label: "Septiembre 2025", file: "septiembre-2025-ooa-prd-comprimido.mp4", poster: "sep-2025.png" }
+].map(v => ({ ...v, url: base + v.file, thumb: base + v.poster }));
+---
+
+<section class="py-8">
+  <h2 class="text-4xl font-extrabold text-center mb-6 text-black tracking-wide mx-4">
+    Lo que se vivió mes a mes.
+  </h2>
+
+  <div class="relative">
+
+    <!-- Botones -->
+    <button aria-label="Anterior" id="prevBtn"
+      class="hidden md:flex items-center justify-center absolute left-10 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full  bg-white/80">
+      ◀
+    </button>
+    <button aria-label="Siguiente" id="nextBtn"
+      class="hidden md:flex items-center justify-center absolute right-10 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-white/80">
+      ▶
+    </button>
+
+    <!-- Carrusel -->
+    <div id="carousel"
+      class="overflow-x-auto scroll-smooth snap-x snap-mandatory flex gap-6 px-6 py-4 no-scrollbar max-w-screen-xl md:mx-auto mx-4">
+      
+      {videos.map((vid) => (
+        <article class="snap-start flex-shrink-0 w-56 md:w-72">
+          <div class="bg-white rounded-2xl pb-4  border ">
+
+            <video
+              src={vid.url}
+              poster={vid.thumb}
+              preload="metadata"
+              controls
+              class="rounded-xl w-full aspect-[9/16] object-cover bg-gray-100"
+              aria-label={vid.label}
+            ></video>
+
+            <div class="mt-3 text-center">
+              <div class="text-sm text-black/70">Video</div>
+              <div class="text-lg font-semibold text-black">{vid.label}</div>
+            </div>
+
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+</style>
+
+<script>
+  (function(){
+    const carousel = document.getElementById('carousel');
+    const prev = document.getElementById('prevBtn');
+    const next = document.getElementById('nextBtn');
+    if(!carousel) return;
+
+    const mq = window.matchMedia('(min-width: 768px)');
+    function toggleBtns() {
+      const show = mq.matches;
+      prev.style.display = show ? 'flex' : 'none';
+      next.style.display = show ? 'flex' : 'none';
+    }
+    toggleBtns();
+    mq.addEventListener('change', toggleBtns);
+
+    const cardWidth = () => carousel.querySelector('article')?.getBoundingClientRect().width || 320;
+
+    prev.addEventListener('click', () => carousel.scrollBy({ left: -cardWidth() - 24, behavior: 'smooth' }));
+    next.addEventListener('click', () => carousel.scrollBy({ left: cardWidth() + 24, behavior: 'smooth' }));
+
+    window.addEventListener('keydown', (e) => {
+      if(document.activeElement && ['INPUT','TEXTAREA'].includes(document.activeElement.tagName)) return;
+      if(e.key === 'ArrowRight') next.click();
+      if(e.key === 'ArrowLeft') prev.click();
+    });
+  })();
+</script>
