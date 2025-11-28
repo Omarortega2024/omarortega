@@ -2,7 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import imgOne from "../images/legislativo/img-1.jpeg";
 import imgTwo from "../images/legislativo/img-2.jpeg";
-import foto from "../images/foto-legislativo.jpg";
+import foto from "../images/legislativo/foto-legislativo.jpg";
 import pimienta from "../images/pimienta.jpg";
 import agronomo from "../images/agronomo.jpg";
 import ambiente from "../images/ambiente.jpg";
@@ -15,6 +15,8 @@ import viejito from "../images/viejito.jpg";
 import constitucion from "../images/constitucion.jpg";
 import tiempo from "../images/tiempo.webp";
 import VideosMeses from "../components/videos-meses.astro";
+import Flipbook from "../components/Flipbook.jsx";
+import Flipbookmobile from "../components/Flipbook-mobile.jsx";
 ---
 
 <style>
@@ -34,7 +36,7 @@ import VideosMeses from "../components/videos-meses.astro";
     <section>
         <div class="h-96 flex items-center justify-center bg-yellow-400">
             <h2 class="uppercase text-center font-semibold text-4xl">
-                Informe legislativo LXI legislatura.
+                Primer Informe de Actividades Legislativas.
             </h2>
         </div>
     </section>
@@ -57,72 +59,40 @@ import VideosMeses from "../components/videos-meses.astro";
                 El Grupo Parlamentario del PRD se ha caracterizado por ser una
                 de las Fracciones Parlamentarias no solamente más productivas en
                 términos legislativos, sino también, por tener una de las
-                Agendas más diversas y vanguardistas en materias de interés para
+                agendas más diversas y vanguardistas en materias de interés para
                 las y los mexiquenses.
             </p>
 
             <p class="mt-4 text-base text-gray-600 leading-relaxed">
-                A lo largo de los tres años de Ejercicio Constitucional, hemos
-                presentado
-                <span class="font-semibold text-gray-900"
-                    >163 productos legislativos</span
-                > conjuntos con quienes integran el Grupo Parlamentario del PRD en
-                la LXI Legislatura del Estado de México; de estos <span
-                    class="font-semibold text-gray-900">140</span
-                > corresponden a
-                <span class="text-yellow-500"
-                    >Iniciativas con Proyecto de Decreto</span
-                > y
-                <span class="text-yellow-500">23</span> a <span
-                    class="text-yellow-500">Puntos de Acuerdo</span
-                >.
-            </p>
-
-            <p class="mt-4 text-base text-gray-600 leading-relaxed">
-                Las banderas del perredismo mexiquense se ven materializadas en
-                los temas que desde el Grupo Parlamentario del PRD se han
-                impulsado, principalmente cuando se trata de aquellas realidades
-                que pocos reconocen y que por tanto, han sido invisibilizadas.
-            </p>
-
-            <p class="mt-4 text-base text-gray-600 leading-relaxed">
-                Entre ellas, la relacionada a las condiciones de desventaja que
-                las mujeres tienen al desarrollarse en cualquier ámbito de la
-                vida en el que se dispongan incursionar, producto de un sistema
-                que las ubica en un estado de vulnerabilidad y con pocas
-                oportunidades de desplazarse en la estructura social, así como
-                el papel que los hombres asumimos ante esta condición;
-                <span class="font-semibold text-gray-900"
-                    >la erradicación de la violencia en razón de género</span
-                >, por eso, es uno de los temas más importantes en nuestra
-                agenda.
-            </p>
-
-            <p class="mt-4 text-base text-gray-600 leading-relaxed">
-                Buscamos que la participación ciudadana y la democratización del
-                poder sean los ejes con los que el aparato gubernamental se
-                conduzca, por lo que parte del catálogo de productos que hemos
-                presentado en esta y anteriores Legislaturas, busca abrir
-                espacios en donde
-                <span class="font-semibold text-gray-900"
-                    >las voces de las y los mexiquenses sean escuchadas</span
-                >, sus propuestas sean tomadas en cuenta y así, construir un
-                esquema de gobierno ciudadano.
-            </p>
-
-            <p class="mt-4 text-base text-gray-600 leading-relaxed">
-                Asimismo, el interés por la <span
-                    class="font-semibold text-gray-900"
-                    >protección del medioambiente</span
+                Te invito a consultar mi Primer Informe Legislativo, siendo este
+                el resultado de un ciclo de esfuerzos y resultados, reafirmando
+                que nuestro compromiso con el Estado de México se mantiene
+                firme. Seguiremos trabajando con la misma convicción, dedicación
+                y apertura, siempre poniendo en el centro a quienes depositaron
+                su confianza en nosotros porque... <strong
+                    >LA LUCHA CONTINÚA.</strong
                 >
-                y los animales se ve reflejado en las propuestas presentadas en el
-                H. Congreso del Estado de México, pues consideramos que el tipo de
-                relación que las personas entablamos con nuestro entorno y los seres
-                sintientes es clave para una sociedad más justa y sustentable.
             </p>
         </div>
     </div>
+    <div>
+        <h3 class="text-4xl font-bold text-center">Revista</h3>
 
+        <!-- Texto para desktop -->
+        <p class="text-gray-600 text-center text-xs hidden md:block mb-4">
+            Haz click sobre la hoja para pasarla
+        </p>
+
+        <!-- Texto para mobile -->
+        <p class="text-gray-600 text-center block text-xs mx-12 md:hidden mb-4">
+            Toca la mitad izquierda para retroceder y la derecha para avanzar
+        </p>
+    </div>
+
+    <div class="max-w-screen-xl mx-auto hidden lg:block mb-10">
+        <Flipbook client:only="react" />
+    </div>
+    <div class="lg:hidden"><Flipbookmobile client:only="react" /></div>
     <div class="max-w-screen-xl mx-auto mt-4 mb-8">
         <!--botones  -->
 
@@ -131,7 +101,7 @@ import VideosMeses from "../components/videos-meses.astro";
         >
             <button
                 data-year="0"
-                class="px-4 py-2 my-1 mx-1 text-white bg-yellow-400 rounded-lg hover:bg-yellow-500"
+                class="px-4 py-2 my-1 mx-1 text-white bg-yellow-400 rounded-lg hover:bg-yellow-500 hidden"
             >
                 Iniciativas prioritarias
             </button>
@@ -163,7 +133,7 @@ import VideosMeses from "../components/videos-meses.astro";
 
         <!-- Contenedor del Primer Año Legislativo -->
 
-        <div data-content="1" class="hidden">
+        <div data-content="1">
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 px-1 lg:px-0">
                 <!--1 -->
                 <div
@@ -809,7 +779,7 @@ import VideosMeses from "../components/videos-meses.astro";
             </div>
         </div>
         <!-- Contenedor de prioritarias -->
-        <div data-content="0">
+        <div data-content="0" class="hidden">
             <div
                 class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 px-1 lg:px-0"
             >
@@ -1344,7 +1314,10 @@ import VideosMeses from "../components/videos-meses.astro";
                     <p class="mt-2 text-sm text-gray-500">Turnado a:</p>
                     <ul class="mt-1 list-disc list-inside text-gray-700">
                         <li>Protección Ambiental y Cambio Climático.</li>
-                        <li>Comisión de Educación, Cultura, Ciencia, Tecnología e Innovación.</li>
+                        <li>
+                            Comisión de Educación, Cultura, Ciencia, Tecnología
+                            e Innovación.
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -2452,6 +2425,16 @@ import VideosMeses from "../components/videos-meses.astro";
             });
         });
     </script>
+
+    <!--flipprueba 
+    <iframe
+        allowfullscreen="allowfullscreen"
+        allow="clipboard-write"
+        scrolling="no"
+        class="fp-iframe"
+        src="https://heyzine.com/flip-book/6534a6c567.html"
+        style="border: 0px; width: 100%; height: 700px;"></iframe>
+-->
 
     <VideosMeses />
 </Layout>
