@@ -51,7 +51,7 @@ export interface Props {
 <style is:inline>
 
 .blogText ul li > a {
-    color: white;
+    color: black;
 }
 
 .bg-yellow{
@@ -131,36 +131,43 @@ export interface Props {
 
 
 </style>
-<nav class:list={["hidden md:block z-50 w-full", Astro.props.blogVariant ? "static bg-black blogText" : "absolute"]}>
-    <div class="max-w-screen-xl mx-auto flex justify-between items-center py-8 px-6 ">
+<nav class:list={["hidden md:block z-50 w-full", Astro.props.blogVariant ? "static bg-slate-100 blogText" : "absolute"]}>
+    <div class="max-w-screen-xl mx-auto flex justify-between items-center py-8 px-6">
+        <!-- Logo -->
         <div>
             <a href="/">
-                <img class="w-56" src={Astro.props.blogVariant ? logoH.src :logohb.src} alt="Logotipo Omar Ortega"/>
+                <img
+                    class="w-56"
+                    src={ logohb.src}
+                    alt="Logotipo Omar Ortega"
+                />
             </a>
         </div>
+
+        <!-- Menú -->
         <div>
-            <ul class="flex space-x-14 font-semibold ">
+            <ul class="flex space-x-14 font-semibold">
                 <li>
-                    <a class="aunderline" href="/trayectoria">
+                    <a class:list={["aunderline", Astro.props.blogVariant ? "text-black" : "text-black"]} href="/trayectoria">
                         Trayectoria
                         <div class="underline"></div>
                     </a>
                 </li>
                 <li>
-                    <a class="aunderline whitespace-nowrap" href="/legislativo">
-                        Informe legislativo 
+                    <a class:list={["aunderline whitespace-nowrap", Astro.props.blogVariant ? "text-black" : "text-black"]} href="/legislativo">
+                        Informe legislativo
                         <div class="underline"></div>
                     </a>
                 </li>
                 <li>
-                    <a class="aunderline whitespace-nowrap" href="/blog">
-                       Noticias
+                    <a class:list={["aunderline whitespace-nowrap", Astro.props.blogVariant ? "text-black" : "text-black"]} href="/blog">
+                        Noticias
                         <div class="underline"></div>
                     </a>
                 </li>
                 <li>
-                    <a class="aunderline" href="/contact"
-                        >Contacto
+                    <a class:list={["aunderline", Astro.props.blogVariant ? "text-black" : "text-black"]} href="/contact">
+                        Contacto
                         <div class="underline"></div>
                     </a>
                 </li>
@@ -168,6 +175,7 @@ export interface Props {
         </div>
     </div>
 </nav>
+
 <nav class="bg-slate-100 hidden md:block" id="stick">
     
     <div class="max-w-screen-xl mx-auto flex justify-between items-center py-8 px-6">
