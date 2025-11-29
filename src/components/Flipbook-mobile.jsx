@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from "react";
 import HTMLFlipBook from "react-pageflip";
 
 const images = Array.from({ length: 18 }, (_, i) =>
-  `https://cdn.omarortegamx.com.mx/flipbook-${i + 1}.png`
+  `https://cdn.omarortegamx.com.mx/flipbook-${i + 1}-ooa.jpg`
 );
 
 const flipSound = new Audio(
